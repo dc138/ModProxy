@@ -1,4 +1,4 @@
-ForgeProxy, a simple minecraft mod for allowing 1.12+ forge clients to connect to proxy networks.
+ModProxy, a simple minecraft mod for allowing 1.12+ modded clients to connect to proxy networks.
 Copyright © 2023 Antonio de Haro
 
 Permission is hereby granted, free of charge, to any person obtaining
