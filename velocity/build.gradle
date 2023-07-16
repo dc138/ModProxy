@@ -1,0 +1,32 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+plugins {
+    id 'java'
+}
+
+group = project.group
+version = project.version
+
+repositories {
+    mavenCentral()
+    maven {
+        name 'velocity'
+        url 'https://repo.velocitypowered.com/snapshots/'
+    }
+}
+
+dependencies {
+    compileOnly "com.velocitypowered:velocity-api:${project.velocity_api}"
+    annotationProcessor "com.velocitypowered:velocity-api:${project.annotation_processor}"
+    implementation "net.kyori:adventure-api:${project.adventure_api}"
+}
+
+task processSource(type: Sync) {
+    from sourceSets.main.java
+    filter(ReplaceTokens, tokens: [VERSION: project.version])
+    into "$buildDir/src"
+}
+
+compileJava {
+    source = processSource.outputs
+}
