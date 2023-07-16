@@ -1,21 +1,23 @@
-# ForgeProxy
+# ModProxy
 
-A simple minecraft mod for allowing 1.12+ forge clients to connect to proxy networks.
+A simple minecraft mod for allowing 1.12+ modded clients to connect to proxy networks.
 
-Minecraft proxy software, like bungeecord and velocity, stopped supported proxying modded clients ever since version 1.13 came out.
-This was because of changes made in the forge protocol to accommodate the way Mojang implemented datapack handling in client-server communications.
-This project attempts to circumvent this restriction by bypassing the proxy completely for forge servers.
-Instead, it sends a custom packet to clients, once they request to connect to one of such servers, with all the information necessary for them to make the connection themselves.
+Minecraft proxy software, like bungeecord and velocity, do not support proxying modern modded clients when server-side mods are in play.
+This project attempts to circumvent this restriction by bypassing the proxy completely for modded servers.
+It instead, once installed on both client and server, sends a custom packet to clients with all the information necessary for them to make the connection themselves.
 Once the client leaves the other server, it will reconnect back to the proxy server.
 For this to work, both client and proxy must have this mod installed.
-This shouldn't really cause problems with forge clients, as hosting a forge server already requires players to install the server's modpack locally.
+This shouldn't really cause problems with servers running server-side mods, as those already require clients to install the server's modpack locally.
+
+This project targets proxying situations only, i.e., when wanting to connect a modded server to an existing network.
+This way, it only requires a plugin to be installed on the proxy server running the network, and on clients that whish to connect to the server in question.
 
 ## License
 
 The code in this repository is licensed under the MIT license:
 
 ```
-ForgeProxy, a simple minecraft mod for allowing 1.12+ forge clients to connect to proxy networks.
+ModProxy, a simple minecraft mod for allowing 1.12+ modded clients to connect to proxy networks.
 Copyright © 2023 Antonio de Haro
 
 Permission is hereby granted, free of charge, to any person obtaining
