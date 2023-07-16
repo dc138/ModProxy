@@ -1,6 +1,6 @@
 # ModProxy
 
-A simple minecraft mod for allowing 1.12+ modded clients to connect to proxy networks.
+A simple minecraft mod for allowing 1.12+ modded servers, like forge or fabric, to connect to proxy networks.
 
 Minecraft proxy software, like bungeecord and velocity, do not support proxying modern modded clients when server-side mods are in play.
 This project attempts to circumvent this restriction by bypassing the proxy completely for modded servers.
