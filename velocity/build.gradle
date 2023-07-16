@@ -21,6 +21,10 @@ dependencies {
     implementation "net.kyori:adventure-api:${project.adventure_api}"
 }
 
+jar {
+    archiveBaseName = project.archive
+}
+
 task processSource(type: Sync) {
     from sourceSets.main.java
     filter(ReplaceTokens, tokens: [VERSION: project.version])
